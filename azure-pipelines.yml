@@ -15,3 +15,7 @@ variables:
 steps:
 - script: dotnet build ./Source/SmartHotel360.Website --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+
+- script: dotnet publish ./Source/SmartHotel360.Website --output $(Build.ArtifactStagingDirectory)
+
+- task: PublishBuildArtifacts@1
